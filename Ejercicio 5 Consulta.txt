@@ -1,0 +1,6 @@
+SELECT * FROM prestamo a, libro b
+  WHERE id_alumno 
+               IN(SELECT id FROM alumno WHERE nombres LIKE '%Sonia%')
+  AND a.id_libro = b.id
+  AND entregado = false
+  AND fecha_prestamo <='2021-07-30';
